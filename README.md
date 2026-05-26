@@ -1,11 +1,12 @@
 # NBTRP
 NBTRP (Neuroblastoma Treatment-Related Prognostic signature), a tumor-driven prognostic program in neuroblastoma. <br>
 ### Usage
-We constructed NBTRP using XGBoost (Extreme Gradient Boosting) machine learning. The trained NBTRP model can be found in the <u>*model*</u> directory.
+We constructed NBTRP using XGBoost (Extreme Gradient Boosting) machine learning. The trained NBTRP model can be found in the <u>*model*</u> directory. You can download the example data and model.
 Usage example is provided as follow:<br>
 ```r
 library(xgboost)
-xgb.fit <- readRDS("./model/xgb.fit_model.rds")
+#xgb.fit <- readRDS("./model/xgb.fit_model.rds") #old model based on 11 features
+xgb.fit <- readRDS("./model/xgb.fit_model_new.rds")# recommend model based on six features
 features <- xgb.fit$feature_names
 #E-MTAB-8248
 EMTAB_exp <- read.table("./example_data/example_E-MTAB-8248_gene_matrix.txt",sep = "\t",check.names = F,header = T)
